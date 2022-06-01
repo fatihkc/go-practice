@@ -21,3 +21,7 @@ Slices is an array that can grow or shrink. Every element in a slice must be of 
 ## Type
 
 ## Receiver functions
+
+## Slices
+
+Slices are zero-indexed
