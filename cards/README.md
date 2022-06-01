@@ -32,3 +32,6 @@ Packages can be found at https://pkg.go.dev. We will use https://pkg.go.dev/io/i
 
 ## Byte slice
 
+## SaveToFile
+
+go run main.go deck.go
