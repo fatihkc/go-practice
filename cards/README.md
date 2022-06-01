@@ -25,3 +25,10 @@ Slices is an array that can grow or shrink. Every element in a slice must be of 
 ## Slices
 
 Slices are zero-indexed
+
+## Packages 
+
+Packages can be found at https://pkg.go.dev. We will use https://pkg.go.dev/io/ioutil@go1.18.2 for this course.
+
+## Byte slice
+
