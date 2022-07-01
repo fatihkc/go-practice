@@ -13,5 +13,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	fmt.Println("Status:", resp.Status)
+	bs := make([]byte, 9999)
+	resp.Body.Read(bs)
+	fmt.Println(string(bs))
 }
