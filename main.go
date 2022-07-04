@@ -2,26 +2,32 @@ package main
 
 import (
 	"fmt"
-	"io"
 	"net/http"
-	"os"
 )
 
-type logWriter struct{}
-
 func main() {
-	resp, err := http.Get("https://google.com")
-	if err != nil {
-		fmt.Println("Error:", err)
-		os.Exit(1)
+	links := []string{
+		"https://google.com",
+		"https://facebook.com",
+		"https://stackoverflow.com",
+		"https://golang.org",
+		"https://amazon.com",
 	}
 
-	lw := logWriter{}
-	io.Copy(lw, resp.Body)
+	for _, link := range links {
+		checkLink(link)
+	}
 }
 
-func (logWriter) Write(bs []byte) (int, error) {
-	fmt.Println(string(bs))
-	fmt.Println("Just wrote this many bytes:", len(bs))
-	return len(bs), nil
+func checkLink(link string) {
+	for i := 0; i < 5; i++ {
+		_, err := http.Get(link)
+		if err != nil {
+			fmt.Println(link, "might be down!")
+			return
+		} else {
+			fmt.Println(link, "is up!")
+			return
+		}
+	}
 }
