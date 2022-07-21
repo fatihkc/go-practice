@@ -5,7 +5,7 @@ package greet;
 option go_package = "github.com/fatihkc/go-practice/greet/proto";
 
 message GreetRequest {
-  string name = 1;
+  string FirstName = 1;
 }
 
 message GreetResponse {
