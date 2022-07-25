@@ -27,7 +27,7 @@ func doLongGreet(c pb.GreetServiceClient) {
 		stream.Send(req)
 		time.Sleep(1 * time.Second)
 	}
-	res, err := stream.Recv()
+	res, err := stream.CloseAndRecv()
 
 	if err != nil {
 		log.Fatalf("Error while receiving response from LongGreet: %v\n", err)
